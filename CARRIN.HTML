@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calvone - Venda de Automóveis</title>  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>Calvone - Venda de Automóveis</title>  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
+      margin: 0; 
+      padding: 0;
       background: #ffffff;
-      color: #222222;
+      color: #222;
     }
 
     header {
-      background: #000000;
+      background: #000;
       color: #d900ff;
       padding: 20px;
       text-align: center;
@@ -24,13 +26,13 @@
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    /* >>> Layout em linhas de três carros <<< */
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -48,7 +50,6 @@
       width: 100%;
     }
 
-    /* >>> Novo estilo para os títulos h3 <<< */
     h3 {
       font-size: 20px;
       color: #46004a;
@@ -84,10 +85,6 @@
       margin: 0 auto;
     }
 
-    p {
-      margin: 5px 0;
-    }
-
     button {
       background: #222;
       color: #fa0092;
@@ -110,9 +107,44 @@
       padding: 10px;
       margin-top: 20px;
     }
+
+    /* === RESPONSIVIDADE === */
+
+    /* Tablets */
+    @media (max-width: 992px) {
+      .carro {
+        width: calc(50% - 30px);
+      }
+    }
+
+    /* Celulares */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .carro {
+        width: 90%;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
   </style>
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif;text-aling: center;margin: top 50px;">
+
+<body>
   <header>
     <h1>Calvones</h1>
     <nav>
@@ -120,7 +152,11 @@
       <a href="carrin.html">Estoque</a>
       <a href="contato.html">Contato</a>
     </nav>
-    <p></p>
+    <p>
+      <button id="btn-carros" style="padding: 10px 20px; font-size: 16px;">
+        Filtro de carros
+      </button>
+    </p>
   </header>
 
   <div class="container">
@@ -170,25 +206,48 @@
       <p><strong>Câmbio:</strong> Cabo de vassoura</p>
       <button onclick="location.href='contato.html'">Ver mais</button>
     </div>
+
     <div class="carro">
-      <img src="fusca perneta.jpg" alt="Fusca bagaçado">
+      <img src="fusca perneta.jpg" alt="Fusca perneta">
       <h3>Fusca perneta</h3>
       <p><strong>Preço:</strong> R$ 15.000</p>
-      <p><strong>Cor:</strong>Praiana</p>
-      <p><strong>Câmbio:</strong> folha de coqueiro</p>
+      <p><strong>Cor:</strong> Praiana</p>
+      <p><strong>Câmbio:</strong> Folha de coqueiro</p>
       <button onclick="location.href='contato.html'">Ver mais</button>
-  </div>
-  <div class="carro">
-      <img src="unin ferrado.jpg" alt="Fusca bagaçado">
+    </div>
+
+    <div class="carro">
+      <img src="unin ferrado.jpg" alt="Uno CHU">
       <h3>UNO CHU</h3>
       <p><strong>Preço:</strong> R$ 55.000</p>
       <p><strong>Cor:</strong> Pikachu</p>
-      <p><strong>Câmbio:</strong> choquer do trovão</p>
+      <p><strong>Câmbio:</strong> Choque do trovão</p>
       <button onclick="location.href='contato.html'">Ver mais</button>
-  </div></div>
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 Calvones - Todos os direitos reservados</p>
   </footer>
+
+  <script>
+    document.getElementById("btn-carros").addEventListener("click", async () => {
+      const { value: nome } = await Swal.fire({
+        title: "Olá! Qual é o seu nome?",
+        input: "text",
+        inputPlaceholder: "Digite seu nome...",
+        showCancelButton: true,
+        confirmButtonText: "Continuar",
+        cancelButtonText: "Cancelar",
+        inputValidator: (value) => {
+          if (!value) return "Por favor, digite seu nome!";
+        }
+      });
+
+      if (nome) {
+        Swal.fire(`Prazer em te conhecer, ${nome}! 🚗`);
+      }
+    });
+  </script>
 </body>
 </html>

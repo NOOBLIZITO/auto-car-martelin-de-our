@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calvone - Venda de Automóveis</title>  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #ffffff;
+      color: #222222;
+    }
+
+    header {
+      background: #000000;
+      color: #d900ff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #d900ff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* >>> Layout em linhas de três carros <<< */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #590442;
+      width: 100%;
+    }
+
+    /* >>> Novo estilo para os títulos h3 <<< */
+    h3 {
+      font-size: 20px;
+      color: #46004a;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    .carro {
+      border: 1px solid #46004a;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #f9e3e3;
+      width: calc(33.333% - 40px);
+      box-sizing: border-box;
+    }
+
+    .carro:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .carro img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 5px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
+    button {
+      background: #222;
+      color: #fa0092;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #2b0000;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;text-aling: center;margin: top 50px;">
+  <header>
+    <h1>Calvones</h1>
+    <nav>
+      <a href="inicio.html">Início</a>
+      <a href="carrin.html">Estoque</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <p></p>
+  </header>
+
+  <div class="container">
+    <h2>Veículos em venda</h2>
+
+    <div class="carro">
+      <img src="carro1.jpg" alt="Chevrolet Onix 2021">
+      <h3>Chevrolet Onix 2021</h3>
+      <p><strong>Preço:</strong> R$ 65.000</p>
+      <p><strong>Cor:</strong> Branco</p>
+      <p><strong>Câmbio:</strong> Automático</p>
+      <button onclick="location.href='contato.html'">Ver mais</button>
+    </div>
+
+    <div class="carro">
+      <img src="carro2.jpg" alt="Volkswagen Golf 2019">
+      <h3>Volkswagen Golf 2019</h3>
+      <p><strong>Preço:</strong> R$ 95.000</p>
+      <p><strong>Cor:</strong> Preto</p>
+      <p><strong>Câmbio:</strong> Manual</p>
+      <button onclick="location.href='contato.html'">Ver mais</button>
+    </div>
+
+    <div class="carro">
+      <img src="carro3.jpg" alt="Toyota Corolla 2020">
+      <h3>Toyota Corolla 2020</h3>
+      <p><strong>Preço:</strong> R$ 85.000</p>
+      <p><strong>Cor:</strong> Prata</p>
+      <p><strong>Câmbio:</strong> Automático</p>
+      <button onclick="location.href='contato.html'">Ver mais</button>
+    </div>
+
+    <div class="carro">
+      <img src="kombi.jpg" alt="Kombi bahiana">
+      <h3>Kombi bahiana</h3>
+      <p><strong>Preço:</strong> R$ 40.000</p>
+      <p><strong>Cor:</strong> Branca e azul</p>
+      <p><strong>Câmbio:</strong> Manual</p>
+      <button onclick="location.href='contato.html'">Ver mais</button>
+    </div>
+
+    <div class="carro">
+      <img src="fusca NAINAINAI.jpg" alt="Fusca bagaçado">
+      <h3>Fusca bagaçado</h3>
+      <p><strong>Preço:</strong> R$ 35.000</p>
+      <p><strong>Cor:</strong> Ferrugem</p>
+      <p><strong>Câmbio:</strong> Cabo de vassoura</p>
+      <button onclick="location.href='contato.html'">Ver mais</button>
+    </div>
+    <div class="carro">
+      <img src="fusca perneta.jpg" alt="Fusca bagaçado">
+      <h3>Fusca perneta</h3>
+      <p><strong>Preço:</strong> R$ 15.000</p>
+      <p><strong>Cor:</strong>Praiana</p>
+      <p><strong>Câmbio:</strong> folha de coqueiro</p>
+      <button onclick="location.href='contato.html'">Ver mais</button>
+  </div>
+  <div class="carro">
+      <img src="unin ferrado.jpg" alt="Fusca bagaçado">
+      <h3>UNO CHU</h3>
+      <p><strong>Preço:</strong> R$ 55.000</p>
+      <p><strong>Cor:</strong> Pikachu</p>
+      <p><strong>Câmbio:</strong> choquer do trovão</p>
+      <button onclick="location.href='contato.html'">Ver mais</button>
+  </div></div>
+
+  <footer>
+    <p>© 2025 Calvones - Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
